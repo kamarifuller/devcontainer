@@ -12,6 +12,5 @@ RUN apt-get install -y wget \
 
 # download Flutter SDK from Flutter Github repo
 RUN git clone -b master https://github.com/flutter/flutter.git /sdk/flutter
-RUN sudo chmod -R 777 /sdk/flutter
-RUN sudo /sdk/flutter/bin/flutter --version
 ENV PATH="/sdk/flutter/bin:${PATH}"
+RUN flutter --version
