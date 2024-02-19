@@ -6,14 +6,17 @@
 		"dockerfile": "Dockerfile"
 	},
 
-		// Configure tool-specific properties.
-		"customizations": {
-			"vscode": {
-				"extensions": [
-					"dart-code.dart-code",
-					"dart-code.flutter"
-				]
-			}
+	// Use 'postCreateCommand' to run commands after the container is created.
+	"postCreateCommand": "git config --global --add safe.directory /sdk/flutter && flutter config --no-analytics",
+
+	// Configure tool-specific properties.
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"dart-code.dart-code",
+				"dart-code.flutter"
+			]
 		}
+	}
 
 }
