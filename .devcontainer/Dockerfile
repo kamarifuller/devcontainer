@@ -6,26 +6,23 @@ ARG USER_GID=${USER_UID}
 
 ENV HOME=/home/${USERNAME}
 
-# Update package lists, install necessary dependencies, and clean up
+# Update package lists and install necessary dependencies
 RUN apt-get update && apt-get install -y \
-        wget \
-        xz-utils \
-        git \
-        curl \
-        file \
-        unzip \
-        zip \
-        libgtk-3-dev \
-        openjdk-17-jdk-headless \
-        ninja-build \
-        clang \
-        cmake \
-        pkg-config
+    wget \
+    xz-utils \
+    file \
+    zip \
+    openjdk-17-jdk-headless --no-install-recommends \
+    clang \
+    cmake \
+    ninja-build \
+    pkg-config \
+    libgtk-3-dev \
+    git
 
-# Clean up
-RUN apt-get autoremove -y \
-    && apt-get clean -y \
-    && rm -rf /var/lib/apt/lists/*
+# Set permissions for the user
+RUN echo "${USERNAME} ALL=(ALL) NOPASSWD:ALL" > /etc/sudoers.d/${USERNAME} \
+    && chmod 0440 /etc/sudoers.d/${USERNAME}
 
 # Download Flutter SDK from Flutter Github repo
 RUN git clone -b master https://github.com/flutter/flutter.git /sdk/flutter
