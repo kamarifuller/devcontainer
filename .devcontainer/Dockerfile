@@ -33,6 +33,3 @@ RUN chown -R ${USERNAME}:${USERNAME} /sdk/flutter
 
 # Switch to non-root user
 USER ${USERNAME}
-
-# Diagnose
-RUN flutter doctor
