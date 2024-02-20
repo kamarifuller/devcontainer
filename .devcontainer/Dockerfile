@@ -31,8 +31,9 @@ RUN echo ${USERNAME} ALL=\(root\) NOPASSWD:ALL > /etc/sudoers.d/${USERNAME} \
     && chmod 0440 /etc/sudoers.d/${USERNAME}
 
 # Download Flutter SDK from Flutter Github repo
-USER ${USERNAME}
-RUN sudo git clone -b master https://github.com/flutter/flutter.git /sdk/flutter
+RUN git clone -b master https://github.com/flutter/flutter.git /sdk/flutter
 
 # Add Flutter bin directory to PATH
 ENV PATH="/sdk/flutter/bin:${PATH}"
+
+USER ${USERNAME}
