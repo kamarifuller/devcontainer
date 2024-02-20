@@ -7,28 +7,25 @@ ARG USER_GID=${USER_UID}
 ENV HOME=/home/${USERNAME}
 
 # Update package lists, install necessary dependencies, and clean up
-RUN apt-get update \
-    && apt-get install -y \
+RUN apt-get update && apt-get install -y \
         wget \
         xz-utils \
-        libgtk-3-dev \
         git \
         curl \
         file \
         unzip \
         zip \
+        libgtk-3-dev \
         openjdk-17-jdk-headless \
         ninja-build \
         clang \
         cmake \
-        pkg-config \
-    && apt-get autoremove -y \
+        pkg-config
+
+# Clean up
+RUN apt-get autoremove -y \
     && apt-get clean -y \
     && rm -rf /var/lib/apt/lists/*
-
-# Set permissions for the user
-RUN echo ${USERNAME} ALL=\(root\) NOPASSWD:ALL > /etc/sudoers.d/${USERNAME} \
-    && chmod 0440 /etc/sudoers.d/${USERNAME}
 
 # Download Flutter SDK from Flutter Github repo
 RUN git clone -b master https://github.com/flutter/flutter.git /sdk/flutter
@@ -36,4 +33,8 @@ RUN git clone -b master https://github.com/flutter/flutter.git /sdk/flutter
 # Add Flutter bin directory to PATH
 ENV PATH="/sdk/flutter/bin:${PATH}"
 
+# Ensure the Flutter directory is writable by the user
+RUN chown -R ${USERNAME}:${USERNAME} /sdk/flutter
+
+# Switch to non-root user
 USER ${USERNAME}
