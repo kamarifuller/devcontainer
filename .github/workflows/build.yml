@@ -19,3 +19,7 @@ jobs:
       - name: install app dependencies
         working-directory: ./app
         run: flutter pub get
+
+      - name: smoke test
+        working-directory: ./app
+        run: flutter test
