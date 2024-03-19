@@ -23,3 +23,7 @@ jobs:
       - name: smoke test
         working-directory: ./app
         run: flutter test
+
+      - name: build flutter web
+        working-directory: ./app
+        run: flutter build web
