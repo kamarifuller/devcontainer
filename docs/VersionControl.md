@@ -15,7 +15,7 @@ Github was my choice of VCS. It is widely used, has plenty of resources availabl
 
 ## Repository Setup
 
-This repository is our one stop shop for development. At the root of our repository we have our most important directories 
+This repository is our one stop shop for development. It contains the container configuration files, our applications code, and the workflows through github. At the root of our repository we have our most important directories 
 
 > Devcontainer configuration files: [.devcontianer](../.devcontainer)
 
@@ -28,3 +28,11 @@ This repository is our one stop shop for development. At the root of our reposit
 > Flutter test application: [test_drive](../test_drive)
 
 > Document with basic repository overview and index: [README.md](../README.md)
+
+## Common Commands and Usage
+
+## Collaboration Features
+
+## Challenges and Solutions
+
+## Conclusion

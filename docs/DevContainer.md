@@ -35,7 +35,7 @@ In the [devcontainer.json](../.devcontainer/devcontainer.json#L<14>) we use VS C
 
 1. Start Docker Desktop
 2. Open VS Code
-3. Use **command+shift+p** and type **Dev Containers**
+3. Use ```command+shift+p``` and type **Dev Containers**
 
 Select one of the following: ***clone this repository into a container image*** or 
 ***locally download this repository and open the folder in a container***.
@@ -44,7 +44,7 @@ Select one of the following: ***clone this repository into a container image*** 
 
 Sometimes the build fails though it was previously successful. If using Apple Silicon ensure Rosetta is installed and up-to-date by running the following on the command line:
 
-> softwareupdate --install-rosetta
+```softwareupdate --install-rosetta```
 
 If Docker continues to fail builds, restart randomly, or lose connection. I noticed the problems are resolved by deleting old containers, images, volumes, and builds.
 
@@ -53,13 +53,16 @@ If this doesnt work try increasing the memory resources Docker can use.
 # Test Flutter web application
 
 First, create your project via the terminal:
-> flutter create test_drive
+
+```flutter create test_drive```
 
 Change into the project directory:
-> cd test_drive
+
+```cd test_drive```
 
 Run your app on a web port and connect to it via your browser:
-> flutter run -d web-server --web-port [port number]
+
+```flutter run -d web-server --web-port [port number]```
 
 # Conclusion
 
