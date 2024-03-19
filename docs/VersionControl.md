@@ -34,5 +34,6 @@ This repository is our one stop shop for development. It contains the container 
 ## Collaboration Features
 
 ## Challenges and Solutions
+See the [project issues](https://github.com/kamarifuller/devcontainer/issues) for ongoing and previous issues as well as possible solutions.
 
 ## Conclusion
