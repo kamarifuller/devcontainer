@@ -27,10 +27,3 @@ jobs:
       - name: build flutter web
         working-directory: ./app
         run: flutter build web
-
-      - name: Deploy
-        working-directory: ./.github/workflows
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./app/build/web
