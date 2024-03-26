@@ -28,5 +28,5 @@ jobs:
         working-directory: ./app
         run: flutter build web
 
-      - name: Deploy
-        uses: ./.github/workflows/deploy.yml
+      - name: deploy
+        uses: ./deploy.yml
