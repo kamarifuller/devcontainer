@@ -1,22 +1,22 @@
-name: Flutter Web App Deploy
+# name: Flutter Web App Deploy
 
-on:
-  workflow_run:
-    workflows: ["Flutter Build"]
-    branches: [main]
-    types:
-      - completed
+# on:
+#   workflow_run:
+#     workflows: ["Flutter Build"]
+#     branches: [main]
+#     types:
+#       - completed
 
-jobs:
-  deploy:
-    runs-on: ubuntu-latest
+# jobs:
+#   deploy:
+#     runs-on: ubuntu-latest
 
-    steps:
-      - name: Checkout Repository
-        uses: actions/checkout@v4
+#     steps:
+#       - name: Checkout Repository
+#         uses: actions/checkout@v4
 
-      - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          github_token: ${{ secrets.GH_PAGES }}
-          publish_dir: ./app/build/web
+#       - name: Deploy to GitHub Pages
+#         uses: peaceiris/actions-gh-pages@v3
+#         with:
+#           github_token: ${{ secrets.GH_PAGES }}
+#           publish_dir: ./app/build/web
