@@ -15,6 +15,14 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v4
 
+      - name: Download Artifacts
+        uses: actions/download-artifact@v4
+        with:
+          # Download artifact name
+          name: flutterbuildartifact
+          # Directory to store download
+          path: ./app
+
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
