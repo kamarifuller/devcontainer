@@ -12,11 +12,14 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout Repository
-        uses: actions/checkout@v4
+      # - name: Checkout Repository
+      #   uses: actions/checkout@v4
         
       - name: Download Artifacts
         uses: actions/download-artifact@v4
+        with:
+          path: ./
+          
       - name: list
         run: ls -R
 
@@ -24,4 +27,4 @@ jobs:
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./app/build/web
+          publish_dir: ./build/web
