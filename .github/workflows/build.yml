@@ -27,3 +27,17 @@ jobs:
       - name: build flutter web
         working-directory: ./app
         run: flutter build web
+
+      - name: upload build artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          # Artifact name
+          name: flutterbuildartifact
+          # File path
+          path: ./app
+          # Behaviour if no files found at path
+          if-no-files-found: error
+          # Days until artifact expires
+          retention-days: 90
+          # Overwrites if artifact with same name exists
+          overwrite: true
