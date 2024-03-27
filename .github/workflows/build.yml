@@ -28,13 +28,16 @@ jobs:
         working-directory: ./app
         run: flutter build web
 
+      - name: List
+        run: ls -R
+
       - name: upload build artifacts
         uses: actions/upload-artifact@v4
         with:
           # Artifact name
           name: flutterbuildartifact
           # File path
-          path: ./app
+          path: ./app/**
           # Behaviour if no files found at path
           if-no-files-found: error
           # Days until artifact expires
