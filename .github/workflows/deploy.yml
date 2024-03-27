@@ -18,7 +18,7 @@ jobs:
       - name: Download Artifacts
         uses: actions/download-artifact@v4
       - name: list
-        run: ls
+        run: ls -R
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
