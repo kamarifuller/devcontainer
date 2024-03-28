@@ -51,17 +51,8 @@ jobs:
         with:
           name: flutterbuildartifact
 
-      - name: pre list pwd
-        run: pwd
-        
-      - name: list
-        run: ls
-
-      - name: working dir
-        run: pwd
-
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish-dir: ./build/web
+          publish_dir: ./build/web
