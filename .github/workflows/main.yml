@@ -51,6 +51,9 @@ jobs:
         with:
           name: flutterbuildartifact
 
+      - name: pre list pwd
+        run: pwd
+        
       - name: list
         run: ls
 
